@@ -17,39 +17,6 @@ def check_all_messages(message):
         for i in range(len(preguntas.data)):
             response(preguntas.data[i]['respuesta'], preguntas.data[i]['palabras'], required_words=preguntas.data[i]['required_words'])
     
-        # for i in range(len(data)):
-        #     data[i]["respuesta"]
-
-        # response('Hola', ['hola', 'klk', 'saludos', 'buenas'], single_response = True)
-        
-        # response('Desarrollo de software', ['cual', 'carrera', 'con mas estudiantes'], single_response=True)
-        
-        # response('En el ano 2000', ['cuando', 'itla', 'año', 'se creo'], single_response=True)
-        # response("""Las carreras que impartimos son: 
-        #             SIMULACIONES INTERACTIVAS Y VIDEOJUEGOS
-        #             TELECOMUNICACIONES
-        #             INTELIGENCIA ARTIFICIAL
-        #             INFORMÁTICA FORENSE
-        #             ENERGÍAS RENOVABLES
-        #             REDES DE INFORMACIÓN
-        #             MECATRÓNICA
-        #             MANUFACTURA AUTOMATIZADA
-        #             MANUFACTURA DE DISPOSITIVOS MÉDICOS
-        #             DISEÑO INDUSTRIAL
-        #             MULTIMEDIA
-        #             SONIDO
-        #             DESARROLLO DE SOFTWARE
-        #             ANALÍTICA Y CIENCIA DE LOS DATOS
-        #             SEGURIDAD INFORMÁTICA
-        #         """, ['cuales', 'carreras', 'imparten'], required_words=['carreras'])
-        
-        # response('estamos ubicados en Las Américas Highway, Km. 27, La Caleta', ['ubicados', 'direccion', 'donde', 'ubicacion'], required_words=['santo','domingo'])
-        # response('En santiago estamos en Edificio Metropolitano I, Segundo Nivel, Av. 27 de Febrero',
-        # ['ubicados', 'direccion', 'donde', 'ubicacion'], required_words=['santiago'])
-        # response('2 años y 4 meses', ['duracion', 'dura', 'cual', 'carreras'], required_words=['carreras', 'duracion'])
-        # response('Accediendo a este enlace: https://plataformavirtual.itla.edu.do/', ['link', 'enlace', 'plataforma', 'virtual', 'cual'], single_response=True)
-        # response('accediendo al sigueinte enlace con su usuario y contrasena: https://orbi.edu.do/orbi/', ['ver calificacion', 'donde', 'ver', 'calificacion'], required_words=['calificaciones'])
-
         best_match = max(highest_prob, key=highest_prob.get)
 
         return unknown() if highest_prob[best_match] < 1 else best_match
